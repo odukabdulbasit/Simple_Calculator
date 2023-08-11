@@ -1,67 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textViewResult"
+    <EditText
+        android:id="@+id/inputField"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="0"
         android:textSize="24sp"
+        android:inputType="none"
         android:gravity="end"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:clickable="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <GridLayout
-        android:id="@+id/gridLayout"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:columnCount="4"
-        android:rowCount="5"
-        app:layout_constraintTop_toBottomOf="@+id/textViewResult"
-        app:layout_constraintBottom_toTopOf="@+id/buttonEquals"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/inputField"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="NotSibling">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:columnCount="4"
+        android:rowCount="5">
 
-        <!-- Number Buttons -->
+        <!-- Row 1 -->
         <Button
-            android:id="@+id/button7"
-            android:layout_width="0dp"
+            android:id="@+id/btn7"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
             android:text="7"
-            android:onClick="onNumberClick" />
+            android:onClick="onNumberClick"/>
 
-        <!-- Other Number Buttons -->
-        <!-- Add the other number buttons similarly -->
-
-        <!-- Operation Buttons -->
         <Button
-            android:id="@+id/buttonPlus"
+            android:id="@+id/btn8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="8"
+            android:onClick="onNumberClick"/>
+
+        <Button
+            android:id="@+id/btn9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="9"
+            android:onClick="onNumberClick"/>
+
+        <Button
+            android:id="@+id/btnDivide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="/"
+            android:onClick="onOperationClick"/>
+
+        <!-- Row 2 -->
+        <Button
+            android:id="@+id/btn4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="+"
-            android:onClick="onOperationClick" />
+            android:layout_columnWeight="1"
+            android:text="4"
+            android:onClick="onNumberClick"/>
 
-        <!-- Other Operation Buttons -->
-        <!-- Add the other operation buttons similarly -->
-
-        <!-- Equals Button -->
         <Button
-            android:id="@+id/buttonEquals"
+            android:id="@+id/btn5"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="5"
+            android:onClick="onNumberClick"/>
+
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="6"
+            android:onClick="onNumberClick"/>
+
+        <Button
+            android:id="@+id/btnMultiply"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="*"
+            android:onClick="onOperationClick"/>
+
+        <!-- Row 3 -->
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="1"
+            android:onClick="onNumberClick"/>
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="2"
+            android:onClick="onNumberClick"/>
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="3"
+            android:onClick="onNumberClick"/>
+
+        <Button
+            android:id="@+id/btnSubtract"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="-"
+            android:onClick="onOperationClick"/>
+
+        <!-- Row 4 -->
+        <Button
+            android:id="@+id/btnDecimal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="."
+            android:onClick="onDecimalClick"/>
+
+        <Button
+            android:id="@+id/btn0"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="0"
+            android:onClick="onNumberClick"/>
+
+        <Button
+            android:id="@+id/btnEqual"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="="
+            android:onClick="onEqualsClick"/>
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="+"
+            android:onClick="onOperationClick"/>
+
+        <!-- Row 5 -->
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnSpan="2"
-            android:text="="
-            android:onClick="onEqualsClick" />
-    </GridLayout>
+            android:text="Clear"
+            android:onClick="onClearClick"/>
 
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:text="Delete"
+            android:onClick="onDeleteClick"/>
+    </GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
